@@ -1,6 +1,6 @@
-# Python Jupyter Project
+# Music Inference - Python Jupyter Project
 
-This is a Python Jupyter project for data analysis and development.
+This is a Python Jupyter project for music data analysis and inference.
 
 ## Setup Instructions
 
@@ -38,4 +38,4 @@ This is a Python Jupyter project for data analysis and development.
 - **NumPy**: Numerical computing
 - **Matplotlib/Seaborn**: Data visualization
 - **Requests**: HTTP library for API calls
-- **Python-dotenv**: Environment variable management 
+- **Python-dotenv**: Environment variable management
