@@ -74,6 +74,64 @@ This is a Python Jupyter project for music data analysis and inference using the
 3. Use the analysis notebook to explore the data
 4. Import utility functions from the `src/` directory
 
+## Audio File Conversion
+
+### Converting MP3 to WAV Format
+
+The DEAM dataset includes MP3 audio files that need to be converted to WAV format for easier processing with audio analysis libraries.
+
+#### Prerequisites
+
+1. **Install FFmpeg (required for MP3 processing):**
+   ```bash
+   # On macOS with Homebrew
+   brew install ffmpeg
+   
+   # On Ubuntu/Debian
+   sudo apt-get install ffmpeg
+   
+   # On Windows
+   # Download from https://ffmpeg.org/download.html
+   ```
+
+2. **Install Python audio packages:**
+   ```bash
+   pip install pydub librosa
+   ```
+
+#### Running the Converter
+
+1. **Convert all MP3 files to WAV:**
+   ```bash
+   cd src
+   python3 deam_mp3_converter.py
+   ```
+
+   This script will:
+   - Process all MP3 files in `data/DEAM/MEMD_audio/`
+   - Create a `wav/` subdirectory in the same location
+   - Convert each MP3 to WAV format
+   - Verify conversions using librosa
+   - Skip files that have already been converted
+
+2. **Output:**
+   - Original MP3 files remain unchanged
+   - WAV files saved to `data/DEAM/MEMD_audio/wav/`
+   - Each WAV file maintains the same filename (with .wav extension)
+
+#### Manual Conversion
+
+To convert a single file:
+```python
+from pydub import AudioSegment
+
+# Load MP3 file
+audio = AudioSegment.from_mp3("path/to/file.mp3")
+
+# Export as WAV
+audio.export("path/to/output.wav", format="wav")
+```
+
 ## Available Packages
 
 - **Jupyter**: Interactive computing environment
@@ -82,3 +140,5 @@ This is a Python Jupyter project for music data analysis and inference using the
 - **Matplotlib/Seaborn**: Data visualization
 - **Requests**: HTTP library for API calls
 - **Python-dotenv**: Environment variable management
+- **Pydub**: Audio file manipulation and conversion
+- **Librosa**: Audio and music signal processing

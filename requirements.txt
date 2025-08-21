@@ -7,4 +7,6 @@ numpy==1.25.2
 matplotlib==3.8.2
 seaborn==0.13.0
 requests==2.31.0
-python-dotenv==1.0.0 
+python-dotenv==1.0.0
+pydub==0.25.1
+librosa==0.10.1 
