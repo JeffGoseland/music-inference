@@ -28,7 +28,7 @@ def load_deam_features():
     load all DEAM feature CSV files and concatenate them into a single dataframe.
     each file contains time series data with multiple rows.
     """
-    features_dir = "data/DEAM/features"
+    features_dir = "../data/DEAM/features"
     
     # get all CSV files
     csv_files = get_csv_files(features_dir)
@@ -59,7 +59,7 @@ def main():
     print_summary(df)
     
     # save consolidated data
-    output_path = "data/deam_features_consolidated.csv"
+    output_path = "../data/processed/deam_features_consolidated.csv"
     save_dataframe(df, output_path)
     
     print(f"\nconsolidated DEAM features saved to: {output_path}")

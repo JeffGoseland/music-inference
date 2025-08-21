@@ -23,7 +23,7 @@ def load_deam_annotations():
     load all DEAM annotation CSV files and concatenate them into a single dataframe.
     each file contains time series annotation data with multiple columns.
     """
-    annotations_dir = "data/DEAM/annotations/annotations averaged per song/dynamic (per second annotations)"
+    annotations_dir = "../data/DEAM/annotations/annotations averaged per song/dynamic (per second annotations)"
     
     # get all CSV files
     csv_files = get_csv_files(annotations_dir)
@@ -61,7 +61,7 @@ def main():
     print_summary(df)
     
     # save consolidated data
-    output_path = "data/deam_annotations_consolidated.csv"
+    output_path = "../data/processed/deam_annotations_consolidated.csv"
     save_dataframe(df, output_path)
     
     print(f"\nconsolidated DEAM annotations saved to: {output_path}")
